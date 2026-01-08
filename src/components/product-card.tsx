@@ -8,18 +8,18 @@ type ProductCardProps = {
 };
 const ProductCard = ({ product, onToggleFavorite }: ProductCardProps) => {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+    <div className="bg-background  rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow group">
       {/* Image Placeholder */}
-      <div className="relative aspect-[3/2] bg-[#E5E7EB] flex items-center justify-center overflow-hidden">
+      <div className="relative aspect-3/2 flex items-center justify-center overflow-hidden">
         <img src={product.image} alt="product-image" />
         <button
           onClick={() => onToggleFavorite(product.id)}
-          className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm hover:scale-110 active:scale-95 transition-all"
+          className="absolute top-3 right-3 w-8 h-8 bg-background rounded-full flex items-center justify-center shadow-sm hover:scale-110 active:scale-95 transition-all"
         >
           <Heart
             size={18}
             className={`transition-colors duration-300 ${
-              product.isFavorite ? "fill-red-500 text-red-500" : "text-gray-400"
+              product.isFavorite ? "fill-primary  text-primary " : "text-text "
             }`}
           />
         </button>
@@ -27,10 +27,10 @@ const ProductCard = ({ product, onToggleFavorite }: ProductCardProps) => {
 
       {/* Product Info */}
       <div className="p-5">
-        <h3 className="text-[17px] font-bold text-gray-900 mb-1.5 line-clamp-1">
+        <h3 className="text-[17px] font-bold text-text  mb-1.5 line-clamp-1">
           {product.title}
         </h3>
-        <p className="text-[13px] text-gray-500 leading-relaxed mb-3 line-clamp-2 h-10">
+        <p className="text-[13px] text-text/60 /60 leading-relaxed mb-3 line-clamp-2 h-10">
           {product.description}
         </p>
 
@@ -42,7 +42,7 @@ const ProductCard = ({ product, onToggleFavorite }: ProductCardProps) => {
               size={14}
               className={`${
                 i < 4
-                  ? "fill-yellow-400 text-yellow-400"
+                  ? "fill-primary text-primary  "
                   : "fill-gray-200 text-gray-200"
               }`}
             />
@@ -54,10 +54,8 @@ const ProductCard = ({ product, onToggleFavorite }: ProductCardProps) => {
 
         {/* Price and Add Button */}
         <div className="flex items-center justify-between">
-          <span className="text-lg font-bold text-gray-900">
-            ${product.price}
-          </span>
-          <button className="bg-[#4F00C8] hover:bg-[#3F00A0] text-white px-5 py-2 rounded-xl flex items-center gap-2 transition-colors font-medium text-sm">
+          <span className="text-lg font-bold text-text ">${product.price}</span>
+          <button className="bg-primary dark:bg-primary-dark hover:bg-primary/80 text-white px-5 py-2 rounded-xl flex items-center gap-2 transition-colors font-medium text-sm">
             <ShoppingCart size={16} />
             Add
           </button>

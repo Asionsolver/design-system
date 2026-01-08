@@ -12,7 +12,7 @@ const Pagination = ({ setCurrentPage, currentPage }: PaginationProps) => {
       {/* Previous Button */}
       <button
         onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-        className="w-11 h-11 flex items-center justify-center rounded-xl border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
+        className="w-11 h-11 flex items-center justify-center rounded-xl border border-gray-300 dark:border-gray-800 text-text dark:text-text-dark hover:bg-primary hover:text-background dark:hover:bg-primary-dark transition-colors"
       >
         <ChevronLeft size={20} />
       </button>
@@ -26,8 +26,8 @@ const Pagination = ({ setCurrentPage, currentPage }: PaginationProps) => {
             className={`w-11 h-11 flex items-center justify-center rounded-xl text-sm font-bold transition-all
                   ${
                     currentPage === page
-                      ? "bg-[#4F00C8] text-white shadow-lg shadow-purple-200"
-                      : "text-gray-600 hover:bg-gray-100"
+                      ? "bg-secondary dark:bg-secondary-dark text-background "
+                      : "text-text dark:text-text-dark hover:bg-gray-100"
                   }`}
           >
             {page}
@@ -38,7 +38,7 @@ const Pagination = ({ setCurrentPage, currentPage }: PaginationProps) => {
       {/* Next Button */}
       <button
         onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-        className="w-11 h-11 flex items-center justify-center rounded-xl border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
+        className="w-11 h-11 flex items-center justify-center rounded-xl border border-gray-300 dark:border-gray-800 text-text dark:text-text-dark hover:bg-primary hover:text-background dark:hover:bg-primary-dark transition-colors"
       >
         <ChevronRight size={20} />
       </button>

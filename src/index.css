@@ -1,1 +1,99 @@
+@import "./tokens//tokens.css";
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 1. Define Semantic Variable Bridges for Light/Dark */
+:root {
+  --primary: var(--color-primary-light);
+  --secondary: var(--color-secondary-light);
+  --text: var(--color-text-light);
+  --bg: var(--color-background-light);
+}
+
+.dark {
+  --primary: var(--color-primary-dark);
+  --secondary: var(--color-secondary-dark);
+  --text: var(--color-text-dark);
+  --bg: var(--color-background-dark);
+}
+
+@theme {
+  /* --- Colors --- */
+  /* Maps to text-primary, bg-primary, border-primary, etc. */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-text: var(--text);
+  --color-background: var(--bg);
+
+  /* --- Spacing --- */
+  /* This overrides/extends Tailwind's spacing scale (p-sm, m-md, gap-lg) */
+  --spacing-xs: var(--spacing-xs);
+  --spacing-sm: var(--spacing-sm);
+  --spacing-md: var(--spacing-md);
+  --spacing-lg: var(--spacing-lg);
+  --spacing-xl: var(--spacing-xl);
+  --spacing-2xl: var(--spacing-2xl);
+
+  /* Mapping custom specific spacing if needed */
+  --spacing-custom-xs: var(--spacing-custom-xs);
+  --spacing-custom-sm: var(--spacing-custom-sm);
+  --spacing-custom-md: var(--spacing-custom-md);
+
+  /* --- Typography: Families --- */
+  /* Maps to font-sans, font-serif, etc. */
+  --font-sans: var(--typography-font-family-sans);
+  --font-serif: var(--typography-font-family-serif);
+  --font-mono: var(--typography-font-family-mono);
+  --font-code: var(--typography-font-family-code);
+
+  /* --- Typography: Sizes --- */
+  /* Maps to text-sm, text-base, etc. */
+  --text-sm: var(--typography-font-size-small);
+  --text-base: var(--typography-font-size-medium);
+  --text-lg: var(--typography-font-size-large);
+  --text-xl: var(--typography-font-size-xlarge);
+  --text-2xl: var(--typography-font-size-2xlarge);
+  --text-3xl: var(--typography-font-size-3xlarge);
+  --text-4xl: var(--typography-font-size-4xlarge);
+  --text-5xl: var(--typography-font-size-5xlarge);
+
+  /* --- Typography: Weights --- */
+  /* Maps to font-light, font-bold, etc. */
+  --font-weight-light: var(--typography-font-weight-light);
+  --font-weight-normal: var(--typography-font-weight-regular);
+  --font-weight-medium: var(--typography-font-weight-medium);
+  --font-weight-semibold: var(--typography-font-weight-semibold);
+  --font-weight-bold: var(--typography-font-weight-bold);
+  --font-weight-extrabold: var(--typography-font-weight-extrabold);
+
+  /* --- Typography: Line Heights --- */
+  /* Maps to leading-sm, leading-base, etc. */
+  --leading-xs: var(--typography-line-height-xs);
+  --leading-sm: var(--typography-line-height-sm);
+  --leading-normal: var(--typography-line-height-base);
+  --leading-lg: var(--typography-line-height-lg);
+  --leading-xl: var(--typography-line-height-xl);
+
+  /* --- Typography: Letter Spacing --- */
+  /* Maps to tracking-xs, tracking-md, etc. */
+  --tracking-xs: var(--typography-letter-spacing-xs);
+  --tracking-sm: var(--typography-letter-spacing-sm);
+  --tracking-md: var(--typography-letter-spacing-md);
+  --tracking-lg: var(--typography-letter-spacing-lg);
+  --tracking-xl: var(--typography-letter-spacing-xl);
+
+  /* --- Custom Component Sizes --- */
+  /* You can add custom utility namespaces in v4 */
+  --size-button-sm: var(--size-button-sm);
+  --size-button-md: var(--size-button-md);
+  --size-icon-sm: var(--size-icon-sm);
+  --size-icon-md: var(--size-icon-md);
+}
+
+/* 3. Global Styles using the semantic variables */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--typography-font-family-sans);
+}

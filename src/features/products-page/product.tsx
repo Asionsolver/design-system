@@ -4,6 +4,7 @@ import { products } from "../../data/product-data";
 import type { Product } from "../../types/types";
 import Pagination from "../../components/pagination";
 import TopNavigation from "../../components/top-navigation";
+import Heading from "../../components/typography/heading";
 
 const Products = () => {
   const [productList, setProductList] = useState<Product[]>(products);
@@ -24,7 +25,10 @@ const Products = () => {
     <div className="min-h-screen font-sans pb-16">
       {/* Navbar */}
       <TopNavigation />
-
+      <Heading as="h2">Explore Products</Heading>
+      <p className="text-center text-gray-600">
+        Discover the lates products in the market
+      </p>
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">

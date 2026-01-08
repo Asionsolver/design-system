@@ -1,6 +1,7 @@
 import { Heart, ShoppingCart, Star } from "lucide-react";
 
 import type { Product } from "../types/types";
+import Heading from "./typography/heading";
 
 type ProductCardProps = {
   product: Product;
@@ -27,9 +28,10 @@ const ProductCard = ({ product, onToggleFavorite }: ProductCardProps) => {
 
       {/* Product Info */}
       <div className="p-5">
-        <h3 className="text-[17px] font-bold text-text  mb-1.5 line-clamp-1">
+        <Heading as="h4" color="primary">
+          {" "}
           {product.title}
-        </h3>
+        </Heading>
         <p className="text-[13px] text-text/60 /60 leading-relaxed mb-3 line-clamp-2 h-10">
           {product.description}
         </p>

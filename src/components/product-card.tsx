@@ -11,9 +11,7 @@ const ProductCard = ({ product, onToggleFavorite }: ProductCardProps) => {
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
       {/* Image Placeholder */}
       <div className="relative aspect-[3/2] bg-[#E5E7EB] flex items-center justify-center overflow-hidden">
-        <span className="text-[#9CA3AF] text-3xl font-medium tracking-wider font-mono">
-          300 × 200
-        </span>
+        <img src={product.image} alt="product-image" />
         <button
           onClick={() => onToggleFavorite(product.id)}
           className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm hover:scale-110 active:scale-95 transition-all"

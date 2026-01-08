@@ -9,6 +9,7 @@ export const products: Product[] = [
     price: 299.99,
     rating: 4.5,
     reviews: 4.5,
+    image: "https://dummyimage.com/300x200/404040/ffffff.png&text=300x200",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const products: Product[] = [
     price: 199.99,
     rating: 4.2,
     reviews: 4.2,
+    image: "https://dummyimage.com/300x200/404040/ffffff.png&text=300x200",
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const products: Product[] = [
     rating: 4.0,
     reviews: 4,
     isFavorite: true,
+    image: "https://dummyimage.com/300x200/404040/ffffff.png&text=300x200",
   },
   {
     id: 4,
@@ -37,6 +40,7 @@ export const products: Product[] = [
     price: 129.99,
     rating: 4.7,
     reviews: 4.7,
+    image: "https://dummyimage.com/300x200/404040/ffffff.png&text=300x200",
   },
   {
     id: 5,
@@ -46,6 +50,7 @@ export const products: Product[] = [
     price: 89.99,
     rating: 4.8,
     reviews: 4.8,
+    image: "https://dummyimage.com/300x200/404040/ffffff.png&text=300x200",
   },
   {
     id: 6,
@@ -55,6 +60,7 @@ export const products: Product[] = [
     price: 159.99,
     rating: 4.6,
     reviews: 4.6,
+    image: "https://dummyimage.com/300x200/404040/ffffff.png&text=300x200",
   },
   {
     id: 7,
@@ -64,6 +70,7 @@ export const products: Product[] = [
     price: 149.99,
     rating: 4.4,
     reviews: 4.4,
+    image: "https://dummyimage.com/300x200/404040/ffffff.png&text=300x200",
   },
   {
     id: 8,
@@ -73,5 +80,6 @@ export const products: Product[] = [
     price: 399.99,
     rating: 4.9,
     reviews: 4.9,
+    image: "https://dummyimage.com/300x200/404040/ffffff.png&text=300x200",
   },
 ];

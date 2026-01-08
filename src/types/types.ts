@@ -5,5 +5,6 @@ export interface Product {
   price: number;
   rating: number;
   reviews: number;
+  image: string;
   isFavorite?: boolean;
 }

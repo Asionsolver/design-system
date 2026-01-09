@@ -25,7 +25,9 @@ const Products = () => {
     <div className="min-h-screen font-sans pb-16">
       {/* Navbar */}
       <TopNavigation />
-      <Heading as="h2">Explore Products</Heading>
+      <Heading as="h2" color={"muted"} align={"center"}>
+        Explore Products
+      </Heading>
       <p className="text-center text-gray-600">
         Discover the lates products in the market
       </p>

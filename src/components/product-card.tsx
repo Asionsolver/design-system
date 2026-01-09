@@ -29,7 +29,6 @@ const ProductCard = ({ product, onToggleFavorite }: ProductCardProps) => {
       {/* Product Info */}
       <div className="p-5">
         <Heading as="h4" color="primary">
-          {" "}
           {product.title}
         </Heading>
         <p className="text-[13px] text-text/60 /60 leading-relaxed mb-3 line-clamp-2 h-10">

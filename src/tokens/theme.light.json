@@ -1,0 +1,17 @@
+{
+  "theme": {
+    "light": {
+      "background": {
+        "default": { "value": "{color.gray.50}" },
+        "surface": { "value": "{color.gray.0}" }
+      },
+      "text": {
+        "primary": { "value": "{color.gray.900}" },
+        "secondary": { "value": "{color.gray.500}" }
+      },
+      "border": {
+        "default": { "value": "{color.gray.300}" }
+      }
+    }
+  }
+}

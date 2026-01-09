@@ -1,0 +1,36 @@
+{
+  "semantic": {
+    "background": {
+      "default": { "value": "{color.gray.50}" },
+      "surface": { "value": "{color.gray.0}" },
+      "inverse": { "value": "{color.gray.900}" }
+    },
+    "text": {
+      "primary": { "value": "{color.gray.900}" },
+      "secondary": { "value": "{color.gray.500}" },
+      "inverse": { "value": "{color.gray.0}" }
+    },
+    "border": {
+      "default": { "value": "{color.gray.300}" },
+      "subtle": { "value": "{color.gray.100}" }
+    },
+    "action": {
+      "primary": {
+        "default": { "value": "{color.amber.500}" },
+        "hover": { "value": "{color.amber.700}" },
+        "text": { "value": "{color.gray.900}" }
+      },
+      "secondary": {
+        "default": { "value": "{color.indigo.500}" },
+        "hover": { "value": "{color.indigo.700}" },
+        "text": { "value": "{color.gray.0}" }
+      }
+    },
+    "status": {
+      "success": { "value": "{color.green.500}" },
+      "warning": { "value": "{color.amber.500}" },
+      "error": { "value": "{color.red.500}" },
+      "info": { "value": "{color.blue.500}" }
+    }
+  }
+}

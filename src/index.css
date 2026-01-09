@@ -1,99 +1,103 @@
-@import "./tokens//tokens.css";
+@import "./tokens/tokens.css";
 @import "tailwindcss";
 
+/* 1. Define custom dark variant for Tailwind v4 */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* 1. Define Semantic Variable Bridges for Light/Dark */
+/* 2. Semantic Variable Bridge 
+   Maps your theme-light and theme-dark tokens to shared variables 
+   so utilities like 'bg-background' switch automatically. */
 :root {
-  --primary: var(--color-primary-light);
-  --secondary: var(--color-secondary-light);
-  --text: var(--color-text-light);
-  --bg: var(--color-background-light);
+  --background: var(--theme-light-background-default);
+  --surface: var(--theme-light-background-surface);
+  --text-primary: var(--theme-light-text-primary);
+  --text-secondary: var(--theme-light-text-secondary);
+  --border-main: var(--theme-light-border-default);
 }
 
 .dark {
-  --primary: var(--color-primary-dark);
-  --secondary: var(--color-secondary-dark);
-  --text: var(--color-text-dark);
-  --bg: var(--color-background-dark);
+  --background: var(--theme-dark-background-default);
+  --surface: var(--theme-dark-background-surface);
+  --text-primary: var(--theme-dark-text-primary);
+  --text-secondary: var(--theme-dark-text-secondary);
+  --border-main: var(--theme-dark-border-default);
 }
 
+/* 3. Tailwind CSS v4 @theme configuration */
 @theme {
   /* --- Colors --- */
-  /* Maps to text-primary, bg-primary, border-primary, etc. */
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-text: var(--text);
-  --color-background: var(--bg);
+  /* Themed Colors (Dynamic) */
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-content-primary: var(--text-primary);
+  --color-content-secondary: var(--text-secondary);
+  --color-border: var(--border-main);
 
-  /* --- Spacing --- */
-  /* This overrides/extends Tailwind's spacing scale (p-sm, m-md, gap-lg) */
-  --spacing-xs: var(--spacing-xs);
-  --spacing-sm: var(--spacing-sm);
-  --spacing-md: var(--spacing-md);
-  --spacing-lg: var(--spacing-lg);
-  --spacing-xl: var(--spacing-xl);
-  --spacing-2xl: var(--spacing-2xl);
+  /* Semantic Actions & Status (Constant) */
+  --color-primary: var(--semantic-action-primary-default);
+  --color-primary-hover: var(--semantic-action-primary-hover);
+  --color-primary-text: var(--semantic-action-primary-text);
+  --color-secondary: var(--semantic-action-secondary-default);
+  --color-secondary-hover: var(--semantic-action-secondary-hover);
 
-  /* Mapping custom specific spacing if needed */
-  --spacing-custom-xs: var(--spacing-custom-xs);
-  --spacing-custom-sm: var(--spacing-custom-sm);
-  --spacing-custom-md: var(--spacing-custom-md);
+  --color-success: var(--semantic-status-success);
+  --color-warning: var(--semantic-status-warning);
+  --color-error: var(--semantic-status-error);
+  --color-info: var(--semantic-status-info);
 
-  /* --- Typography: Families --- */
-  /* Maps to font-sans, font-serif, etc. */
-  --font-sans: var(--typography-font-family-sans);
-  --font-serif: var(--typography-font-family-serif);
-  --font-mono: var(--typography-font-family-mono);
-  --font-code: var(--typography-font-family-code);
+  /* Raw Palette (Optional access) */
+  --color-amber-500: var(--color-amber-500);
+  --color-indigo-500: var(--color-indigo-500);
 
-  /* --- Typography: Sizes --- */
-  /* Maps to text-sm, text-base, etc. */
-  --text-sm: var(--typography-font-size-small);
-  --text-base: var(--typography-font-size-medium);
-  --text-lg: var(--typography-font-size-large);
-  --text-xl: var(--typography-font-size-xlarge);
-  --text-2xl: var(--typography-font-size-2xlarge);
-  --text-3xl: var(--typography-font-size-3xlarge);
-  --text-4xl: var(--typography-font-size-4xlarge);
-  --text-5xl: var(--typography-font-size-5xlarge);
+  /* --- Typography Families --- */
+  --font-sans: var(--typography-font-sans);
+  --font-serif: var(--typography-font-serif);
+  --font-mono: var(--typography-font-mono);
 
-  /* --- Typography: Weights --- */
-  /* Maps to font-light, font-bold, etc. */
-  --font-weight-light: var(--typography-font-weight-light);
-  --font-weight-normal: var(--typography-font-weight-regular);
-  --font-weight-medium: var(--typography-font-weight-medium);
-  --font-weight-semibold: var(--typography-font-weight-semibold);
-  --font-weight-bold: var(--typography-font-weight-bold);
-  --font-weight-extrabold: var(--typography-font-weight-extrabold);
+  /* --- Typography Sizes --- */
+  /* Custom Heading Utilities (Usage: text-h1, text-h2) */
+  --text-h1: var(--typography-heading-h1-font-size);
+  --text-h2: var(--typography-heading-h2-font-size);
+  --text-h3: var(--typography-heading-h3-font-size);
+  --text-h4: var(--typography-heading-h4-font-size);
 
-  /* --- Typography: Line Heights --- */
-  /* Maps to leading-sm, leading-base, etc. */
-  --leading-xs: var(--typography-line-height-xs);
-  --leading-sm: var(--typography-line-height-sm);
-  --leading-normal: var(--typography-line-height-base);
-  --leading-lg: var(--typography-line-height-lg);
-  --leading-xl: var(--typography-line-height-xl);
+  /* Overriding Tailwind Defaults */
+  --text-lg: var(--typography-body-lg-font-size);
+  --text-base: var(--typography-body-md-font-size);
+  --text-sm: var(--typography-body-sm-font-size);
+  --text-xs: var(--typography-caption-default-font-size);
 
-  /* --- Typography: Letter Spacing --- */
-  /* Maps to tracking-xs, tracking-md, etc. */
-  --tracking-xs: var(--typography-letter-spacing-xs);
-  --tracking-sm: var(--typography-letter-spacing-sm);
-  --tracking-md: var(--typography-letter-spacing-md);
-  --tracking-lg: var(--typography-letter-spacing-lg);
-  --tracking-xl: var(--typography-letter-spacing-xl);
+  /* Line Heights */
+  --leading-h1: var(--typography-heading-h1-line-height);
+  --leading-h2: var(--typography-heading-h2-line-height);
+  --leading-base: var(--typography-body-md-line-height);
+  --leading-tight: var(--typography-body-sm-line-height);
 
-  /* --- Custom Component Sizes --- */
-  /* You can add custom utility namespaces in v4 */
-  --size-button-sm: var(--size-button-sm);
-  --size-button-md: var(--size-button-md);
-  --size-icon-sm: var(--size-icon-sm);
-  --size-icon-md: var(--size-icon-md);
+  /* Font Weights */
+  --font-weight-bold: var(--typography-heading-h1-font-weight);
+  --font-weight-semibold: var(--typography-heading-h3-font-weight);
+  --font-weight-normal: var(--typography-body-md-font-weight);
+
+  /* --- Spacing & Radii --- */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-full: var(--radius-full);
+
+  /* --- Shadows --- */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
 }
 
-/* 3. Global Styles using the semantic variables */
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: var(--typography-font-family-sans);
+/* Global Styles using the semantic variables */
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: var(--typography-font-sans);
+    line-height: var(--typography-body-md-line-height);
+    transition: background-color 0.2s, color 0.2s;
+  }
 }

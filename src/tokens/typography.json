@@ -1,0 +1,71 @@
+{
+  "typography": {
+    "font": {
+      "sans": { "value": "'Inter', sans-serif" },
+      "serif": { "value": "'Merriweather', serif" },
+      "mono": { "value": "'Fira Code', monospace" }
+    },
+
+    "heading": {
+      "h1": {
+        "fontSize": { "value": "48px" },
+        "lineHeight": { "value": "56px" },
+        "fontWeight": { "value": "700" }
+      },
+      "h2": {
+        "fontSize": { "value": "40px" },
+        "lineHeight": { "value": "48px" },
+        "fontWeight": { "value": "700" }
+      },
+      "h3": {
+        "fontSize": { "value": "32px" },
+        "lineHeight": { "value": "40px" },
+        "fontWeight": { "value": "600" }
+      },
+      "h4": {
+        "fontSize": { "value": "24px" },
+        "lineHeight": { "value": "32px" },
+        "fontWeight": { "value": "600" }
+      }
+    },
+
+    "body": {
+      "lg": {
+        "fontSize": { "value": "18px" },
+        "lineHeight": { "value": "28px" },
+        "fontWeight": { "value": "400" }
+      },
+      "md": {
+        "fontSize": { "value": "16px" },
+        "lineHeight": { "value": "24px" },
+        "fontWeight": { "value": "400" }
+      },
+      "sm": {
+        "fontSize": { "value": "14px" },
+        "lineHeight": { "value": "20px" },
+        "fontWeight": { "value": "400" }
+      }
+    },
+
+    "paragraph": {
+      "default": {
+        "fontSize": { "value": "16px" },
+        "lineHeight": { "value": "24px" },
+        "fontWeight": { "value": "400" }
+      },
+      "small": {
+        "fontSize": { "value": "14px" },
+        "lineHeight": { "value": "20px" },
+        "fontWeight": { "value": "400" }
+      }
+    },
+
+    "caption": {
+      "default": {
+        "fontSize": { "value": "12px" },
+        "lineHeight": { "value": "16px" },
+        "fontWeight": { "value": "400" }
+      }
+    }
+  }
+}
